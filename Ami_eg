@@ -1,0 +1,24 @@
+5. Launch an ec2 instance in North Virginia webserver running. Create custom image and  launch in Ohio.
+
+Step1: Create an ec2 instance
+ 
+Launch instance -> name -> linux -> keys -> deafault Vpc -> subnet(1a) -> auto assignn enable -> select sg -> launch
+Enable ports 22, cutom tcp - 8080, Http - 80
+Step2: Connect it to the terminal
+Step3: Install Httpd
+ 
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+systemctl status httpd
+
+Step4: Go into the html directory and create a html file
+ 
+cd /var/www/html
+cat > index.html
+Hiiii
+Step5: Copy the public ip address of the instance and copy it on to the browser using 80 port.
+Step6: Select the instance, go to the actions and create an image.
+Step7: Once the image is available, select the image and select copy AMI in actions and select the destination region and copy it.
+Step8: Go to the Ohio region and check for the AMI.
+Step9: Once the AMI is available launch an instance using the AMI and try to access the public ip address.
